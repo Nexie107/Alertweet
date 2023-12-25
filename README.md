@@ -49,7 +49,7 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
 6. Créer les macros:
     * Dans Google Sheet: Extensions > Apps Script
     * Créer un fichier "Main.gs" et y copier-coller le contenu de [Main.gs](code/Main.gs)
-    * Créer un fichier pour la détection de date et heure dans le tweet. Y copier-coller le contenu d'un de [ces fichiers](https://github.com/Nexie107/Alertweet/tree/main/code/custom%20date&time) permettant une détection spéciale pour des comptes Twitter (X) en particulier, ou considérer que tout est en direct (notification reçue moins d'une minute après la publication du tweet) avec le contenu de [ce fichier](code/Simple_date_time.gs).
+    * Créer un fichier pour la détection de date et heure dans le tweet. Y copier-coller le contenu d'un de [ces fichiers](https://github.com/Nexie107/Alertweet/tree/main/code/custom%20date&time) permettant une détection spéciale pour des comptes Twitter (X) en particulier, ou considérer que tout est en direct (notification reçue moins d'une minute après la publication du tweet) avec le contenu de [ce fichier](code/Simple%20date%20time.gs).
 
 7. Accorder les autorisations. Pour la première utilisation, Google va vous demander des autorisations pour accéder à Google Sheet et Calendar.
     * Choisir `run` dans la liste des fonctions et cliquer sur "Exécuter" ![image](https://github.com/Nexie107/Alertweet/assets/151630513/2bbfe9ac-0916-4176-89fb-7476d103c8c7)
@@ -133,7 +133,7 @@ Notifications are sent via Google Calendar events. The application configuration
 6. Create the macros:
     * In Google Sheet: Extensions > Apps Script
     * Create a file "Main.gs" and copy-paste the content of [Main.gs](code/Main.gs)
-    * Create a file for date and time detection in the tweet. Copy-paste the content of one of [these files](https://github.com/Nexie107/Alertweet/tree/main/code/custom%20date&time) that allows special detection for specific Twitter accounts (X), or consider everything is live (notification received less than a minute after the publication of the tweet) with the content of [this file](code/Simple_date_time.gs).
+    * Create a file for date and time detection in the tweet. Copy-paste the content of one of [these files](https://github.com/Nexie107/Alertweet/tree/main/code/custom%20date&time) that allows special detection for specific Twitter accounts (X), or consider everything is live (notification received less than a minute after the publication of the tweet) with the content of [this file](code/Simple%20date%20time.gs).
 
 7. Grant permissions. For the first use, Google will ask for permissions to access Google Sheet and Calendar.
     * Choose `run` from the list of functions and click "Run" ![image](https://github.com/Nexie107/Alertweet/assets/151630513/2bbfe9ac-0916-4176-89fb-7476d103c8c7)
