@@ -25,10 +25,10 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
 1. Créer un calendrier [Google Calendar](https://calendar.google.com/calendar/u/0/r) et récupérer son ID:
     * dans le menu à gauche, cliquer sur "+" à côté de "Autres Agendas" puis "Créer un agenda". Le nommer et paramétrer puis créer.
     * (en restant) dans les paramètres, choisir l'agenda créé et descendre jusqu'à "ID de l'agenda". Copier l'ID.
-2. Créer et nommer un fichier Google Sheet avec le même compte Google que le calendrier. Passer les noms de fonctions en anglais (Fichier > Paramètres > Toujours utiliser les noms de fonction en anglais)
+2. Créer et nommer un fichier Google Sheet avec le même compte Google que le calendrier. Passer les noms de fonction en anglais (Fichier > Paramètres > Toujours utiliser les noms de fonction en anglais)
 3. Créer et nommer 2 feuilles `settings` et `logs`
 4. Dans la feuille `settings`:
-    * Reproduire selon l'image ci-dessous (la langue n'importe pas, mais l'ordre et le contenu (ex: semaine commençant le Lundi); si.
+    * Reproduire selon l'image ci-dessous (la langue n'importe pas, mais l'ordre et le contenu; ex: semaine commençant le Lundi); si.
     * Mettre une case à cocher en B12 (Insertion > case à cocher) 
     * Mettre la formule `="'"&substitute(SUBSTITUTE(B2;",";",");"-";"-")` en C2 et propager jusqu'à C8.
     * Mettre la formule `=if(Not(ISBLANK(B2));MOD(ROW(A2)-1;7);)` en D2 et propager jusqu'à D8.
@@ -39,8 +39,8 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
 ![image](https://github.com/Nexie107/Alertweet/assets/151630513/daf03348-7333-4ea2-9a87-47a296e8b8a8)
 
 5. Dans la feuille `logs`:
-    * reproduire selon l'image ci-dessous (la langue n'importe pas, mais l'ordre et le contenu (ex: semaine commençant le Lundi); si.
-    * (optionel) figer la ligne 1: clic droit sur le numéro de la ligne (1) > Afficher plus d'options > Figer jusqu'à la ligne 1.
+    * Reproduire selon l'image ci-dessous (la langue n'importe pas, mais l'ordre et le contenu; ex: semaine commençant le Lundi); si.
+    * (Optionel) figer la ligne 1: clic droit sur le numéro de la ligne (1) > Afficher plus d'options > Figer jusqu'à la ligne 1.
 
 >:bulb: C'est dans cette feuille qu seront inscirts tous les tweets qui ont été retenus après filtrage par mots-clés, date et heure.
       
