@@ -11,12 +11,12 @@ function parseSettings(){//parse the settings
 
 
 function fetchLastTweet(){
-  settings.getRange("D13").setValue("")
+  settings.getRange("C12").setValue("")
   url="https://twstalker.com/"+settings.getRange("C11").getValue()// for public access to twitter with no login
   xpathText="/html/body/main/div[4]/div/div/div[2]/div[1]/div[1]/div[2]/p" //xpath to last tweet
-  settings.getRange("D13").setFormula('=REGEXREPLACE(CHOOSECOLS(IMPORTXML("'+url+'";"'+xpathText+'");1);"\n";"")')
-  tweet=settings.getRange("D13").getValue()
-  settings.getRange("D13").setValue("")
+  settings.getRange("C12").setFormula('=REGEXREPLACE(CHOOSECOLS(IMPORTXML("'+url+'";"'+xpathText+'");1);"\n";"")')
+  tweet=settings.getRange("C12").getValue()
+  settings.getRange("C12").setValue("")
   return tweet
 }
 
@@ -72,7 +72,7 @@ function avoidRedundancy(tweet){  //very important: to not get spammed with the 
 }
 
 function event(){// create the calendar event and send notification
-  cal=CalendarApp.getCalendarById(settings.getRange('B13'.getValue()))
+  cal=CalendarApp.getCalendarById(settings.getRange('D12'.getValue()))
   ev=cal.createEvent(tweet,startTime,endTime)
   ev.addPopupReminder(5) //notification cannot be set to later than 5mins before the event (in the script), but will show anyway 
 }
