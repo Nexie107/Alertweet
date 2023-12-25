@@ -38,6 +38,8 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
 5. Dans la feuille `logs`:
     * reproduire selon l'image ci-dessous (la langue n'importe pas, mais l'ordre et le contenu (ex: semaine commençant le Lundi); si.
     * (optionel) figer la ligne 1: clic droit sur le numéro de la ligne (1) > Afficher plus d'options > Figer jusqu'à la ligne 1.
+
+>:bulb: C'est dans cette feuille qu seront inscirts tous les tweets qui ont été retenus après filtrage par mots-clés, date et heure.
       
 ![image](https://github.com/Nexie107/Alertweet/assets/151630513/25a180fc-ce8f-4e4e-8488-627c93d4f0f2)
 
@@ -56,8 +58,17 @@ Dans la feuille `settings`, remplir les plages horaires que vous voulez surveill
 
 > :bulb: **Astuce:** Pour choisir correctement les mots-clés, il est conseillé d'aller vérifier les mots employés dans les tweets du compte à surveiller. Si vous n'avez pas de compte Twitter (X), vous pouvez utiliser [Twstalker](https://twstalker.com/).
 
->:warning: Cocher la case **`ON/OFF`** (B12) arrêtera complètement le fonctionnement de l'appli ! 
+>:warning: Décocher la case **`ON/OFF`** (B12) arrêtera complètement le fonctionnement de l'appli (OFF) ! Donc aucun tweet ne sera traité, même s'il concerne un moment ultérieur
 
+## Limites
+* Un seul compte tweeter peut être surveillé à la fois.
+* Il y a un risque de manquer des infos lorsque la case **`ON/OFF`** est décochée (OFF).
+* Changer les périodes de surveillance risque de conduire à manquer des informations concernant les nouvelles périodes si elles ont été postées avant le changement.
+* Si le format/synthaxe des tweets postés change, des informations risquent d'être manquées (ex: des mots-clés ne correspondent pas). C'est encore plus vrai en utlisant des fonctions poersonnalisées pour la date et l'heure (cf [partie suivante](https://github.com/Nexie107/Alertweet#pour-les-geeks))
 
+## Pour les geeks
+Vous pouvez choisir de développer vos propres fonctions pour analyser les tweets plus en profondeur en Google Apps Script (Javascript), notament pour détecter des dates et heures. Par exemple, si un service de transport en communs annonce des perturbations à une date ultérieure, il sera plus intéressant de recevoir la notification ultérieurement plutôt qu'au moment du tweet.
 
-
+* La fonction qui détecte les mots clés prend en entrée un string unique et renvoie un booléen, où true correspond à un mot clé détecté.
+* Celle qui récupère les dates dans le corps d'un tweet prend en entrée un string unique et renvoie soit une date (format date de js) ou un array de dates.
+* Celle qui récupère les heures dans le corps d'un tweet prend en entrée un string unique et renvoie un array de 2 dates dont la première est la date de début et la seconde celle de fin.
