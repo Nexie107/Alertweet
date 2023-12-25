@@ -44,9 +44,9 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
 ![image](https://github.com/Nexie107/Alertweet/assets/151630513/25a180fc-ce8f-4e4e-8488-627c93d4f0f2)
 
 6. Créer les macros:
-    * Extensions > Apps Script
-    * Créer les fichiers suivants: "Main.gs" et un autres à nommer à la convenance
-    *  
+    * Dans Google Sheet: Extensions > Apps Script
+    * Créer un fichier "Main.gs" et y copier-coller le contenu de [Main.gs](code/Main.gs)
+    * Créer un fichier pour la détection de date et heure dans le tweet. Y copier-coller le contenu d'un de [ces fichiers](https://github.com/Nexie107/Alertweet/tree/main/code/custom%20date&time) permettant une détection spéciale pour des comptes Twitter (X) en particulier, ou considérer que tout est en dirct (notification reçue moins d'une minute après la publication du tweet) avec le contenu de [ce fichier](code/Simple_date_time.gs) 
 
 ## Renseignement du compte à surveiller, mots-clés, dates et heures
 Dans la feuille `settings`, remplir les plages horaires que vous voulez surveiller (les tweet mentionnant ces plages, ou publié durant celles-ci s'il n'en mentionne aucune sera retenu):
@@ -72,3 +72,5 @@ Vous pouvez choisir de développer vos propres fonctions pour analyser les tweet
 * La fonction qui détecte les mots clés prend en entrée un string unique et renvoie un booléen, où true correspond à un mot clé détecté.
 * Celle qui récupère les dates dans le corps d'un tweet prend en entrée un string unique et renvoie soit une date (format date de js) ou un array de dates.
 * Celle qui récupère les heures dans le corps d'un tweet prend en entrée un string unique et renvoie un array de 2 dates dont la première est la date de début et la seconde celle de fin.
+
+* 
