@@ -16,7 +16,6 @@ function fetchLastTweet(){
   xpathText="/html/body/main/div[4]/div/div/div[2]/div[1]/div[1]/div[2]/p" //xpath to last tweet
   settings.getRange("C12").setFormula('=REGEXREPLACE(CHOOSECOLS(IMPORTXML("'+url+'";"'+xpathText+'");1);"\n";"")')
   tweet=settings.getRange("C12").getValue()
-  settings.getRange("C12").setValue("")
   return tweet
 }
 
