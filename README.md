@@ -1,12 +1,12 @@
 # Alertweet
-:fr: Une "mini-app" multi-plateforme basée sur les produits Google Workspace pour recevoir des notifications personnalisées de publications de comptes Twitter (X) selon leur contenu, dates/heure de publication ou de référence (période mentionnée dans la publication).
+:fr: Une "mini-app" multi-plateforme basée sur les produits Google Workspace pour recevoir des notifications personnalisées de publications de comptes Twitter (X) selon leurs contenu, dates/heure de publication ou de référence (période mentionnée dans la publication).
 
 :us:/:uk: A cross-platform "mini-app" relying on Google Workspace to get custom notification on Twitter (X) posts from an accounts based on their contents and dates/time of publication or reference (mentionned in the post).
 
 English version [below](https://github.com/Nexie107/Alertweet#usuk-documentation).
 
 # :fr: Documentation
-**:warning: Toute responsabilité est déclinée par rapport à l'utilisation de cette application, y compris en terme de contenu notifié et de bon focntionnement. Je ne suis pas responsable du contenu publié sur Twitter (X) que vous cherchez à surveiller.**
+**:warning: Toute responsabilité est déclinée par rapport à l'utilisation de cette application, y compris en terme de contenu notifié et de bon fonctionnement. Je ne suis pas responsable du contenu publié sur Twitter (X) que vous cherchez à surveiller.**
 ## Ce qu'est Alertweet
 Alertweet est un outil développé sur Google Apps script permettant de recevoir des notification personnalisées de posts d'un compte Twitter public. Cela permet de filtrer les tweets selon:
   * Des mots-clés,
