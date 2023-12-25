@@ -72,5 +72,4 @@ Vous pouvez choisir de développer vos propres fonctions pour analyser les tweet
 * La fonction qui détecte les mots clés prend en entrée un string unique et renvoie un booléen, où true correspond à un mot clé détecté.
 * Celle qui récupère les dates dans le corps d'un tweet prend en entrée un string unique et renvoie soit une date (format date de js) ou un array de dates.
 * Celle qui récupère les heures dans le corps d'un tweet prend en entrée un string unique et renvoie un array de 2 dates dont la première est la date de début et la seconde celle de fin.
-
-* 
+* Si vous souhaitez voir vos fonctions personnalisées intégrées au projet, parlez-en [ici](https://github.com/Nexie107/Alertweet/discussions/1) !
