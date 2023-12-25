@@ -4,6 +4,7 @@
 :us:/:uk: A cross-platform "mini-app" relying on Google Workspace to get custom notification on Twitter (X) posts from an accounts based on their contents and dates/time of publication or reference (mentionned in the post).
 
 # :fr: Documentation
+**:warning: Toute responsabilité est déclinée par rapport à l'utilisation de cette application, y compris en terme de contenu notifié et de bon focntionnement. Je ne suis pas responsable du contenu publié sur Twitter (X) que vous cherchez à surveiller.**
 ## Ce qu'est Alertweet
 Alertweet est un outil développé sur Google Apps script permettant de recevoir des notification personnalisées de posts d'un compte Twitter public. Cela permet de filtrer les tweets selon:
   * Des mots-clés,
@@ -46,7 +47,20 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
 6. Créer les macros:
     * Dans Google Sheet: Extensions > Apps Script
     * Créer un fichier "Main.gs" et y copier-coller le contenu de [Main.gs](code/Main.gs)
-    * Créer un fichier pour la détection de date et heure dans le tweet. Y copier-coller le contenu d'un de [ces fichiers](https://github.com/Nexie107/Alertweet/tree/main/code/custom%20date&time) permettant une détection spéciale pour des comptes Twitter (X) en particulier, ou considérer que tout est en dirct (notification reçue moins d'une minute après la publication du tweet) avec le contenu de [ce fichier](code/Simple_date_time.gs) 
+    * Créer un fichier pour la détection de date et heure dans le tweet. Y copier-coller le contenu d'un de [ces fichiers](https://github.com/Nexie107/Alertweet/tree/main/code/custom%20date&time) permettant une détection spéciale pour des comptes Twitter (X) en particulier, ou considérer que tout est en dirct (notification reçue moins d'une minute après la publication du tweet) avec le contenu de [ce fichier](code/Simple_date_time.gs).
+
+7. Accorder les autorisations. Pour la première utilisation, Google va vous demander des autorisations pour accéder à Google Sheet et Calendar.
+    * Choisir `run` dans la liste des fonctions et cliquer sur "Exécuter" ![image](https://github.com/Nexie107/Alertweet/assets/151630513/2bbfe9ac-0916-4176-89fb-7476d103c8c7)
+    * Un popup invitant à accorder les autorisations nécessaires apparaît. Accorder les autorisations en se laissant guider. Une fenêtre indiquant que "Google n'a pas validé cette application" apparaît. C'est normal. Cliquer sur "Paramètres avancés", puis "Accéder à Alertweet (non sécurisé)" et enfin "Autoriser". (aucune crainte, Google demande juste l'autorisation d'accéder à vos propres données !)
+ 
+
+8. Créer un  déclencheur. Cela permettra de faire tourner le code automatiquement sur les serveurs de Google pour s'assurer d'être notifié au bon moment.
+    * Aller dans le menu "Déclencheurs" (bouton avec une horloge dans le menu à gauche).
+    * Cliquer sur "Ajouter un déclencheur" (bouton bleu en bas à droite)
+    * Paramétrer comme ceci: (ou avec vos propres paramètres, même si un intervalle de déclenchement le plus bas assure un meilleur fonctionnement de l'application) ![image](https://github.com/Nexie107/Alertweet/assets/151630513/9f98f892-6a09-462b-974d-6c7c578a5310)
+    * Vous recevrez par email chaque semaine un rapport des éventuelles erreurs survenues (les causes sont multiples, par exemple des erreurs de serveurs).
+
+
 
 ## Renseignement du compte à surveiller, mots-clés, dates et heures
 Dans la feuille `settings`, remplir les plages horaires que vous voulez surveiller (les tweet mentionnant ces plages, ou publié durant celles-ci s'il n'en mentionne aucune sera retenu):
