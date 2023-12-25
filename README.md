@@ -3,7 +3,7 @@
 
 :us:/:uk: A cross-platform "mini-app" relying on Google Workspace to get custom notification on Twitter (X) posts from an accounts based on their contents and dates/time of publication or reference (mentionned in the post).
 
-English version [below]((https://github.com/Nexie107/Alertweet#us-fr-documentation).
+English version [below](https://github.com/Nexie107/Alertweet#usuk-documentation).
 
 # :fr: Documentation
 **:warning: Toute responsabilité est déclinée par rapport à l'utilisation de cette application, y compris en terme de contenu notifié et de bon focntionnement. Je ne suis pas responsable du contenu publié sur Twitter (X) que vous cherchez à surveiller.**
