@@ -42,14 +42,14 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
     * Reproduire selon l'image ci-dessous (la langue n'importe pas, mais l'ordre et le contenu; ex: semaine commençant le Lundi); si.
     * (Optionel) figer la ligne 1: clic droit sur le numéro de la ligne (1) > Afficher plus d'options > Figer jusqu'à la ligne 1.
 
->:bulb: C'est dans cette feuille qu seront inscirts tous les tweets qui ont été retenus après filtrage par mots-clés, date et heure.
+>:bulb: C'est dans cette feuille qu seront inscrits tous les tweets qui ont été retenus après filtrage par mots-clés, date et heure.
       
 ![image](https://github.com/Nexie107/Alertweet/assets/151630513/25a180fc-ce8f-4e4e-8488-627c93d4f0f2)
 
 6. Créer les macros:
     * Dans Google Sheet: Extensions > Apps Script
     * Créer un fichier "Main.gs" et y copier-coller le contenu de [Main.gs](code/Main.gs)
-    * Créer un fichier pour la détection de date et heure dans le tweet. Y copier-coller le contenu d'un de [ces fichiers](https://github.com/Nexie107/Alertweet/tree/main/code/custom%20date&time) permettant une détection spéciale pour des comptes Twitter (X) en particulier, ou considérer que tout est en dirct (notification reçue moins d'une minute après la publication du tweet) avec le contenu de [ce fichier](code/Simple_date_time.gs).
+    * Créer un fichier pour la détection de date et heure dans le tweet. Y copier-coller le contenu d'un de [ces fichiers](https://github.com/Nexie107/Alertweet/tree/main/code/custom%20date&time) permettant une détection spéciale pour des comptes Twitter (X) en particulier, ou considérer que tout est en direct (notification reçue moins d'une minute après la publication du tweet) avec le contenu de [ce fichier](code/Simple_date_time.gs).
 
 7. Accorder les autorisations. Pour la première utilisation, Google va vous demander des autorisations pour accéder à Google Sheet et Calendar.
     * Choisir `run` dans la liste des fonctions et cliquer sur "Exécuter" ![image](https://github.com/Nexie107/Alertweet/assets/151630513/2bbfe9ac-0916-4176-89fb-7476d103c8c7)
@@ -65,7 +65,7 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
 
 
 ## Renseignement du compte à surveiller, mots-clés, dates et heures
-Dans la feuille `settings`, remplir les plages horaires que vous voulez surveiller (les tweet mentionnant ces plages, ou publié durant celles-ci s'il n'en mentionne aucune sera retenu):
+Dans la feuille `settings`, remplir les plages horaires que vous voulez surveiller (les tweets mentionnant ces plages, ou publiés durant celles-ci s'ils n'en mentionnent aucune sera retenu):
   1. En face du jour concerné (B2 à B8), remplir au format `[heure du début de la plage]-[heure de la fin de la plage]`. Le format d'heure à adopter est `[hh]:[mm]` avec les heures au format 24h. Pour avoir plusieurs plages horaires sur un même jour de la semaine, les séparer par une virgule sans espace. (ex: `7:00-9:00,17:00-19:00` pour surveiller entre 7:00 et 9:00, puis entre 17:00 et 19:00).
   2. Remplir les mots-clés, séparés par des virgules sans espaces. :warning: les mots-clés seront recherchés tels quels, donc attention à la casse !
   3. Remplir le nom du compte Twitter (X) à surveiller (@...) en B11. 
@@ -80,7 +80,7 @@ Dans la feuille `settings`, remplir les plages horaires que vous voulez surveill
 * Un seul compte tweeter peut être surveillé à la fois.
 * Il y a un risque de manquer des infos lorsque la case **`ON/OFF`** est décochée (OFF).
 * Changer les périodes de surveillance risque de conduire à manquer des informations concernant les nouvelles périodes si elles ont été postées avant le changement.
-* Si le format/synthaxe des tweets postés change, des informations risquent d'être manquées (ex: des mots-clés ne correspondent pas). C'est encore plus vrai en utlisant des fonctions personnalisées pour la date et l'heure (cf [partie suivante](https://github.com/Nexie107/Alertweet#pour-les-geeks))
+* Si le format/synthaxe des tweets postés change, des informations risquent d'être manquées (ex: des mots-clés ne correspondent pas). C'est encore plus vrai en utilisant des fonctions personnalisées pour la date et l'heure (cf [partie suivante](https://github.com/Nexie107/Alertweet#pour-les-geeks))
 
 ## Pour les geeks
 Vous pouvez choisir de développer vos propres fonctions pour analyser les tweets plus en profondeur en Google Apps Script (Javascript), notament pour détecter des dates et heures. Par exemple, si un service de transport en communs annonce des perturbations à une date ultérieure, il sera plus intéressant de recevoir la notification ultérieurement plutôt qu'au moment du tweet.
