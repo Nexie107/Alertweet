@@ -11,13 +11,12 @@ function parseSettings(){//parse the settings
 
 
 function fetchLastTweet(){
-  filter=spreadsheet.getSheetByName("filter")
-  filter.getRange("A1").setValue("")
+  settings.getRange("D13").setValue("")
   url="https://twstalker.com/"+settings.getRange("C11").getValue()// for public access to twitter with no login
   xpathText="/html/body/main/div[4]/div/div/div[2]/div[1]/div[1]/div[2]/p" //xpath to last tweet
-  filter.getRange("A1").setFormula('=REGEXREPLACE(CHOOSECOLS(IMPORTXML("'+url+'";"'+xpathText+'");1);"\n";"")')
-  tweet=filter.getRange("A1").getValue()
-  filter.getRange("A1").setValue("")
+  settings.getRange("D13").setFormula('=REGEXREPLACE(CHOOSECOLS(IMPORTXML("'+url+'";"'+xpathText+'");1);"\n";"")')
+  tweet=settings.getRange("D13").getValue()
+  settings.getRange("D13").setValue("")
   return tweet
 }
 
