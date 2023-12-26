@@ -9,7 +9,6 @@ function parseSettings(){//parse the settings
   return [keywords,user_days,times]
 }
 
-
 function fetchLastTweet(){
   settings.getRange("C12").setValue("")
   url="https://twstalker.com/"+settings.getRange("C11").getValue()// for public access to twitter with no login
@@ -19,14 +18,12 @@ function fetchLastTweet(){
   return tweet
 }
 
-
 function includes_kw(tweet){//look for keywords presence in tweet
   for (k in keywords){
     if (tweet.includes(keywords[k])){return true}
   }
   return false
 } 
-
 
 function check_dates(start,end){ //check whether any of the chosen dates from dates_TCL are wanted
   d=start
@@ -36,7 +33,6 @@ function check_dates(start,end){ //check whether any of the chosen dates from da
   }
   return false
 }
-
 
 function check_time(tweet_time){  //to check one single time. DO NOT USE DIRECTLY IN RUN
   day=times[(startTime.getDay()-1)+7*(startTime.getDay()==0)][0].split(',')//times for the current day of the week
@@ -56,7 +52,6 @@ function check_time(tweet_time){  //to check one single time. DO NOT USE DIRECTL
   }
   return false
 }
-
 
 function check_multi_times(tweet_time){ //to check 1+ times. USE THIS ONE IN RUN 
   if (Array.isArray(tweet_time)){
@@ -91,8 +86,6 @@ function run(){
         if (check_dates(startTime,endTime)){
           tweet_time=time_TCL(tweet)//change here for a custom time retrieving function (beware of the output format!)
           if (check_multi_times(tweet_time)){
-            Logger.log(startTime)
-            Logger.log(endTime)
             event()
             logs.insertRowBefore(2)
             logs.getRange("A2:C2").setValues([[startTime,endTime,tweet]])
