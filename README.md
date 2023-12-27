@@ -85,7 +85,7 @@ Dans la feuille `settings`, remplir les plages horaires que vous voulez surveill
 
 >:memo: Chaque Tweet devant être notifié (selon les filtres définis) aura la forme d'un évènement Google Calendar dont les jours de début et fin sont soit définis par le tweet, soit le jour même. Pour les heures, le début est soit mentionné dans le tweet, soit l'heure actuelle, tandis que la fin sera l'heure de fin de la période définie dans le Google Sheet au sein de laquelle rentre le tweet en question.
 >
->Ex: **Période définie pour ce jour** (${\color{blue}{28/12/2023}}$): ${\color{black}18:00- \color{green}20:00}$.
+>Ex: **Période définie pour ce jour** (${\color{blue}{28/12/2023}}$): 18:00- ${\color{green}20:00}$.
 >
 >**Tweet:**" C9- ${\color{orange}{19h41}}$ - Déviée dir. Hôpitaux Est - Arrêt Part-Dieu Auditorium non desservi - Reprise estimée à 21h.- Embouteillages Rue de Bonnel à Lyon 3ème"
 >
@@ -178,7 +178,7 @@ In the `settings` sheet, fill in the time ranges you want to monitor (tweets men
 
 >:memo: Each Tweet to be notified (according to the filters defined) will take the form of a Google Calendar event whose start and end days are either defined by the tweet, or on the day itself. For times, the start time is either mentioned in the tweet or the current time, while the end time will be the end time of the period defined in the Google Sheet in which the tweet in question falls.
 >
->E.g. **Defined period for the current day** (${\color{blue}{28/12/2023}}$): ${\color{black}18:00- \color{green}20:00}$.
+>E.g. **Defined period for the current day** (${\color{blue}{28/12/2023}}$): 18:00- ${\color{green}20:00}$.
 >
 >**Tweet:** "⚠️SERVICE ALERT - 1 & 5 (Bath)⚠️ The following services will not operate: 🚌 1 - ${\color{orange}{16:26}}$ Bath Bus Station to Southdown (due 17:13) 🚌 5 - 18:26 Bath Bus Station to Whiteway Circle (due 19:16) We apologise for any inconvenience caused."
 >
