@@ -80,6 +80,7 @@ function run(){
   if (parseSettings()){
     [keywords,user_days,times]=parseSettings()
     tweet=fetchLastTweet()
+    console.info(tweet)
     debug='ON'
     if (avoidRedundancy(tweet)){
       debug+='-no redundancy'
