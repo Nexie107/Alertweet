@@ -76,24 +76,31 @@ function event(){// create the calendar event and send notification
 }
 
 function run(){
+  debug='OFF'
   if (parseSettings()){
     [keywords,user_days,times]=parseSettings()
     tweet=fetchLastTweet()
-    console.log(tweet)
+    debug='ON'
     if (avoidRedundancy(tweet)){
+      debug+='-no redundancy'
       if (includes_kw(tweet)){
+        debug+='-keywords included'
         [startTime,endTime]=dates_TCL(tweet)//change here for a custom date retrieving function (beware of the output format!)
         if (check_dates(startTime,endTime)){
+          debug+='-dates match'
           tweet_time=time_TCL(tweet)//change here for a custom time retrieving function (beware of the output format!)
           if (check_multi_times(tweet_time)){
+            debug+='-times match'
             event()
             logs.insertRowBefore(2)
             logs.getRange("A2:C2").setValues([[startTime,endTime,tweet]])
             console.log([startTime,endTime,tweet])
+            return true
           }
         }
       }
     }
-  } 
+  }
+  console.log(debug)// complete debug sentence: 'ON-no redundancy-keywords included-dates match-times match' 
   return false
 }
