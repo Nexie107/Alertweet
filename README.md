@@ -12,7 +12,8 @@ Alertweet est un outil développé sur Google Apps script permettant de recevoir
   * Des mots-clés,
   * La date et l'heure. Soit de publication du tweet, soit d'une date et/ou heure mentionnés dans le tweet.
 
-Les notifications sont envoyées via des évènements Google Calendar. Le paramétrage de l'appli se fait depuis un fichier Google Sheet.
+Les notifications sont envoyées via des évènements Google Calendar. Le paramétrage de l'appli se fait depuis un fichier Google Sheet. La notification arrivera au moment mentionné dans le tweet s'il en est mentionné un; ou directement à sa publication (à 1 minute près) sinon.
+
 L'utilisation des services Google, en plus de leur grande accessibilité (tant au développeur qu'à son public), garantit une totale transparence en matière de code et de sécurité.
 
 ## Pré-requis
@@ -82,6 +83,16 @@ Dans la feuille `settings`, remplir les plages horaires que vous voulez surveill
 * Changer les périodes de surveillance risque de conduire à manquer des informations concernant les nouvelles périodes si elles ont été postées avant le changement.
 * Si le format/synthaxe des tweets postés change, des informations risquent d'être manquées (ex: des mots-clés ne correspondent pas). C'est encore plus vrai en utilisant des fonctions personnalisées pour la date et l'heure (cf [partie suivante](https://github.com/Nexie107/Alertweet#pour-les-geeks))
 
+>:memo: Chaque Tweet devant être notifié (selon les filtres définis) aura la forme d'un évènement Google Calendar dont les jours de début et fin sont soit définis par le tweet, soit le jour même. Pour les heures, le début est soit mentionné dans le tweet, soit l'heure actuelle, tandis que la fin sera l'heure de fin de la période définie dans le Google Sheet au sein de laquelle rentre le tweet en question.
+>
+>Ex: **Période définie pour ce jour** (${\color{blue}{28/12/2023}}$): ${\color{black}18:00- \color{green}20:00}$.
+>
+>**Tweet:**" C9- ${\color{orange}{19h41}}$ - Déviée dir. Hôpitaux Est - Arrêt Part-Dieu Auditorium non desservi - Reprise estimée à 21h.- Embouteillages Rue de Bonnel à Lyon 3ème"
+>
+>**:arrow_right: début de l'évènement:** ${\color{blue}{28/12/2023}}-\color{orange}{19:41}$
+>
+>**:arrow_right: fin de l'évènement:** ${\color{blue}{28/12/2023}}-\color{green}{20:00}$
+
 ## Pour les geeks
 Vous pouvez choisir de développer vos propres fonctions pour analyser les tweets plus en profondeur en Google Apps Script (Javascript), notament pour détecter des dates et heures. Par exemple, si un service de transport en communs annonce des perturbations à une date ultérieure, il sera plus intéressant de recevoir la notification ultérieurement plutôt qu'au moment du tweet.
 
@@ -97,7 +108,9 @@ Alertweet is a tool developed on Google Apps Script that allows receiving person
   * Keywords,
   * Date and time, either of tweet publication or a date and/or hour mentioned in the tweet.
 
-Notifications are sent via Google Calendar events. The application configuration is done through a Google Sheet file. The use of Google services, in addition to their broad accessibility (both for developers and their audience), ensures complete transparency in terms of code and security.
+Notifications are sent via Google Calendar events. The application configuration is done through a Google Sheet file. The notification will be sent at the moment mentionned in tweet if there is on mentionned; or else directly after it is posted (within 1 minute).
+
+The use of Google services, in addition to their broad accessibility (both for developers and their audience), ensures complete transparency in terms of code and security.
 
 ## Prerequisites
 * A Google account (if you have multiple Google accounts, use only one for this app)
@@ -162,6 +175,16 @@ In the `settings` sheet, fill in the time ranges you want to monitor (tweets men
 * There is a risk of missing information when the **`ON/OFF`** checkbox is unchecked (OFF).
 * Changing monitoring periods may lead to missing information about new periods if they were posted before the change.
 * If the format/syntax of posted tweets changes, information may be missed (e.g., keywords not matching). This is even more true when using custom functions for date and time (see [next section](https://github.com/Nexie107/Alertweet#for-geeks)).
+
+>:memo: Each Tweet to be notified (according to the filters defined) will take the form of a Google Calendar event whose start and end days are either defined by the tweet, or on the day itself. For times, the start time is either mentioned in the tweet or the current time, while the end time will be the end time of the period defined in the Google Sheet in which the tweet in question falls.
+>
+>E.g. **Defined period for the current day** (${\color{blue}{28/12/2023}}$): ${\color{black}18:00- \color{green}20:00}$.
+>
+>**Tweet:** "⚠️SERVICE ALERT - 1 & 5 (Bath)⚠️ The following services will not operate: 🚌 1 - ${\color{orange}{16:26}}$ Bath Bus Station to Southdown (due 17:13) 🚌 5 - 18:26 Bath Bus Station to Whiteway Circle (due 19:16) We apologise for any inconvenience caused."
+>
+>**:arrow_right:Start of the event:** ${\color{blue}{28/12/2023}}-{\color{orange}{16:26}}$
+>
+>**:arrow_right:End of the event:** ${\color{blue}{28/12/2023}}-{\color{green}20:00}$
 
 ## For Geeks
 You can choose to develop your own functions to analyze tweets more deeply in Google Apps Script (JavaScript), especially for detecting dates and times. For example, if a public transport service announces disruptions at a later date, it would be more interesting to receive the notification later than at the time of the tweet.
