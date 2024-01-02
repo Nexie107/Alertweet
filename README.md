@@ -66,7 +66,7 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
 
 
 ## Renseignement du compte à surveiller, mots-clés, dates et heures
-Dans la feuille `settings`, remplir les plages horaires que vous voulez surveiller (les tweets mentionnant ces plages, ou publiés durant celles-ci s'ils n'en mentionnent aucune sera retenu):
+Dans la feuille `settings`, remplir les plages horaires que vous voulez surveiller (les tweets mentionnant ces plages, ou publiés durant celles-ci s'ils n'en mentionnent aucune, seront retenu):
   1. En face du jour concerné (B2 à B8), remplir au format `[heure du début de la plage]-[heure de la fin de la plage]`. Le format d'heure à adopter est `[hh]:[mm]` avec les heures au format 24h. Pour avoir plusieurs plages horaires sur un même jour de la semaine, les séparer par une virgule sans espace. (ex: `7:00-9:00,17:00-19:00` pour surveiller entre 7:00 et 9:00, puis entre 17:00 et 19:00).
   2. Remplir les mots-clés, séparés par des virgules sans espaces. :warning: les mots-clés seront recherchés tels quels, donc attention à la casse !
   3. Remplir le nom du compte Twitter (X) à surveiller (@...) en B11. 
