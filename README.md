@@ -81,6 +81,7 @@ Dans la feuille `settings`, remplir les plages horaires que vous voulez surveill
 * Un seul compte tweeter peut être surveillé à la fois.
 * Il y a un risque de manquer des infos lorsque la case **`ON/OFF`** est décochée (OFF).
 * Changer les périodes de surveillance risque de conduire à manquer des informations concernant les nouvelles périodes si elles ont été postées avant le changement.
+* Si plusieurs tweets sont postés dans la même minute (ou dans l'intervalle entre 2 exécution du déclencheurs), il y a un risque de manquer des infos. 
 * Si le format/synthaxe des tweets postés change, des informations risquent d'être manquées (ex: des mots-clés ne correspondent pas). C'est encore plus vrai en utilisant des fonctions personnalisées pour la date et l'heure (cf [partie suivante](https://github.com/Nexie107/Alertweet#pour-les-geeks))
 
 >:memo: Chaque Tweet devant être notifié (selon les filtres définis) aura la forme d'un évènement Google Calendar dont les jours de début et fin sont soit définis par le tweet, soit le jour même. Pour les heures, le début est soit mentionné dans le tweet, soit l'heure actuelle, tandis que la fin sera l'heure de fin de la période définie dans le Google Sheet au sein de laquelle rentre le tweet en question.
@@ -174,6 +175,7 @@ In the `settings` sheet, fill in the time ranges you want to monitor (tweets men
 * Only one Twitter account can be monitored at a time.
 * There is a risk of missing information when the **`ON/OFF`** checkbox is unchecked (OFF).
 * Changing monitoring periods may lead to missing information about new periods if they were posted before the change.
+* There is a risk of missing information if several tweets are published within the same minute (or during the interval between two runs of the code scheduled by the trigger)
 * If the format/syntax of posted tweets changes, information may be missed (e.g., keywords not matching). This is even more true when using custom functions for date and time (see [next section](https://github.com/Nexie107/Alertweet#for-geeks)).
 
 >:memo: Each Tweet to be notified (according to the filters defined) will take the form of a Google Calendar event whose start and end days are either defined by the tweet, or on the day itself. For times, the start time is either mentioned in the tweet or the current time, while the end time will be the end time of the period defined in the Google Sheet in which the tweet in question falls.
