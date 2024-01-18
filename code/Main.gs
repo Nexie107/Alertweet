@@ -86,7 +86,8 @@ function run(){
       debug+='-no redundancy'
       if (includes_kw(tweet)){
         debug+='-keywords included'
-        [startTime,endTime]=dates_TCL(tweet)//change here for a custom date retrieving function (beware of the output format!)
+        startTime=dates_TCL(tweet)[0]
+        endTime=dates_TCL(tweet)[1]//change here for a custom date retrieving function (beware of the output format!)
         if (check_dates(startTime,endTime)){
           debug+='-dates match'
           tweet_time=time_TCL(tweet)//change here for a custom time retrieving function (beware of the output format!)
