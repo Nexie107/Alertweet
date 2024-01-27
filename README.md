@@ -3,9 +3,12 @@
 
 :us:/:uk: A cross-platform "mini-app" relying on Google Workspace to get custom notification on Twitter (X) posts from an accounts based on their contents and dates/time of publication or reference (mentionned in the post).
 
-English version [below](https://github.com/Nexie107/Alertweet#usuk-documentation).
+English version [below](/README.md#usuk-documentation).
 
 # :fr: Documentation
+:information_source: *Attention à bien vérifier que vous êtes à jour avec le [Changelog](/Changelog.md). Les changements sont indiqués avec une " :star: " ici.*
+
+
 **:warning: Toute responsabilité est déclinée par rapport à l'utilisation de cette application, y compris en terme de contenu notifié et de bon fonctionnement. Je ne suis pas responsable du contenu publié sur Twitter (X) que vous cherchez à surveiller.**
 ## Ce qu'est Alertweet
 Alertweet est un outil développé sur Google Apps script permettant de recevoir des notification personnalisées de posts d'un compte Twitter public. Cela permet de filtrer les tweets selon:
@@ -33,8 +36,9 @@ L'utilisation des services Google, en plus de leur grande accessibilité (tant a
     * Mettre une case à cocher en B12 (Insertion > case à cocher) 
     * Mettre la formule `="'"&substitute(SUBSTITUTE(B2;",";",");"-";"-")` en C2 et propager jusqu'à C8.
     * Mettre la formule `=if(Not(ISBLANK(B2));MOD(ROW(A2)-1;7);)` en D2 et propager jusqu'à D8.
-    * Mettre la formule `=IF(LEFT(B11;1)="@";RIGHT(B11;LEN(B11)-1);B11)` en C11.
-    * Coller l'ID de l'agenda (cf étape 1) en D13.
+    * :star: Mettre la formule `="/"&IF(LEFT(B11;1)="@";RIGHT(B11;LEN(B11)-1);B11)` en C11.
+    * :star: Mettre la formule `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1U2Aw1oGV2b8C4iMrtb4Lkw3XMtgtFwWRH-4zelyNtXU/edit#gid=694530783";"output!A1:B2")` en C14.
+    * :star: Coller l'ID de l'agenda (cf étape 1) en D12.
     * (Optionel) masquer les colonnes C et D (sélectionner les colonnes > clic droit > masquer les colonnes).
     
 ![image](https://github.com/Nexie107/Alertweet/assets/151630513/daf03348-7333-4ea2-9a87-47a296e8b8a8)
@@ -103,6 +107,7 @@ Vous pouvez choisir de développer vos propres fonctions pour analyser les tweet
 * Si vous souhaitez voir vos fonctions personnalisées intégrées au projet, parlez-en [ici](https://github.com/Nexie107/Alertweet/discussions/1) !
 
 # :us:/:uk: Documentation 
+*:information_source: Remind to stay updated using the [Changelog](/Changelog.md). Changes from the last release are marked with a " ⭐ " here.*
 **:warning: Disclaimer: All responsibility is disclaimed regarding the use of this application, including in terms of the notified content and proper functioning. I am not liable for the content published on Twitter (X) that you are seeking to monitor.**
 ## What is Alertweet
 Alertweet is a tool developed on Google Apps Script that allows receiving personalized notifications for posts from a public Twitter account. This enables filtering tweets based on:
@@ -131,7 +136,8 @@ The use of Google services, in addition to their broad accessibility (both for d
     * Write the formula `="'"&substitute(SUBSTITUTE(B2;",";",");"-";"-")` in C2 and fill it down to C8.
     * Write the formula `=if(Not(ISBLANK(B2));MOD(ROW(A2)-1;7);)` in D2 and fill it down to D8.
     * Write the formula `=IF(LEFT(B11;1)="@";RIGHT(B11;LEN(B11)-1);B11)` in C11.
-    * Paste the calendar ID (step 1) into D13.
+    * :star: Write the formula `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1U2Aw1oGV2b8C4iMrtb4Lkw3XMtgtFwWRH-4zelyNtXU/edit#gid=694530783";"output!A1:B2")` in C14.
+    * :star: Paste the calendar ID (step 1) into D12.
     * (Optional) hide columns C and D (select columns > right-click > hide columns).
     
 ![image](https://github.com/Nexie107/Alertweet/assets/151630513/daf03348-7333-4ea2-9a87-47a296e8b8a8)
