@@ -107,7 +107,9 @@ Vous pouvez choisir de développer vos propres fonctions pour analyser les tweet
 * Si vous souhaitez voir vos fonctions personnalisées intégrées au projet, parlez-en [ici](https://github.com/Nexie107/Alertweet/discussions/1) !
 
 # :us:/:uk: Documentation 
-*:information_source: Remind to stay updated using the [Changelog](/Changelog.md). Changes from the last release are marked with a " ⭐ " here.*
+:information_source: *Remind to stay updated using the [Changelog](/Changelog.md). Changes from the last release are marked with a " ⭐ " here.*
+
+
 **:warning: Disclaimer: All responsibility is disclaimed regarding the use of this application, including in terms of the notified content and proper functioning. I am not liable for the content published on Twitter (X) that you are seeking to monitor.**
 ## What is Alertweet
 Alertweet is a tool developed on Google Apps Script that allows receiving personalized notifications for posts from a public Twitter account. This enables filtering tweets based on:
