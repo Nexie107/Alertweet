@@ -11,8 +11,9 @@ function parseSettings(){//parse the settings
 
 function fetchLastTweet(){
   settings.getRange("C12").setValue("")
-  url="https://twstalker.com/"+settings.getRange("C11").getValue()// for public access to twitter with no login
-  xpathText="/html/body/main/div[4]/div/div/div[2]/div[1]/div[1]/div[2]/p" //xpath to last tweet
+  nitter_instance=settings.getRange("D14").getValue()
+  url=nitter_instance+settings.getRange("C11").getValue()// for public access to twitter with no login
+  xpathText=settings.getRange("D15").getValue() //xpath to last tweet
   settings.getRange("C12").setFormula('=REGEXREPLACE(CHOOSECOLS(IMPORTXML("'+url+'";"'+xpathText+'");1);"\n";"")')
   tweet=settings.getRange("C12").getValue()
   return tweet
@@ -77,32 +78,41 @@ function event(){// create the calendar event and send notification
 
 function run(){
   debug='OFF'
+  debug_counter=0
   if (parseSettings()){
     [keywords,user_days,times]=parseSettings()
     tweet=fetchLastTweet()
-    console.info(tweet)
+    console.log(tweet)
     debug='ON'
+    debug_counter++
     if (avoidRedundancy(tweet)){
       debug+='-no redundancy'
+      debug_counter++
       if (includes_kw(tweet)){
         debug+='-keywords included'
+        debug_counter++
         startTime=dates_TCL(tweet)[0]
-        endTime=dates_TCL(tweet)[1]//change here for a custom date retrieving function (beware of the output format!)
+        endTime=dates_TCL(tweet)[1]
+        //change here for a custom date retrieving function (beware of the output format!)
         if (check_dates(startTime,endTime)){
           debug+='-dates match'
+          debug_counter++
           tweet_time=time_TCL(tweet)//change here for a custom time retrieving function (beware of the output format!)
           if (check_multi_times(tweet_time)){
             debug+='-times match'
+            debug_counter++
             event()
             logs.insertRowBefore(2)
             logs.getRange("A2:C2").setValues([[startTime,endTime,tweet]])
             console.log([startTime,endTime,tweet])
+            debug_counter=0
             return true
           }
         }
       }
     }
   }
-  console.log(debug)// complete debug sentence: 'ON-no redundancy-keywords included-dates match-times match' 
+  debug_phrase=["","-redundancy","-no matches for specified keywords","-no matches for specified dates","-no matches for specified times"]
+  console.log(debug+debug_phrase[debug_counter])// complete debug sentence: 'ON-no redundancy-keywords included-dates match-times match' 
   return false
 }
