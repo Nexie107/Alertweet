@@ -135,7 +135,7 @@ The use of Google services, in addition to their broad accessibility (both for d
     * Insert a checkbox in B12 (Insert > Checkbox) 
     * Write the formula `="'"&substitute(SUBSTITUTE(B2;",";",");"-";"-")` in C2 and fill it down to C8.
     * Write the formula `=if(Not(ISBLANK(B2));MOD(ROW(A2)-1;7);)` in D2 and fill it down to D8.
-    * Write the formula `=IF(LEFT(B11;1)="@";RIGHT(B11;LEN(B11)-1);B11)` in C11.
+    * :star: Write the formula `="/"&IF(LEFT(B11;1)="@";RIGHT(B11;LEN(B11)-1);B11)` in C11.
     * :star: Write the formula `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1U2Aw1oGV2b8C4iMrtb4Lkw3XMtgtFwWRH-4zelyNtXU/edit#gid=694530783";"output!A1:B2")` in C14.
     * :star: Paste the calendar ID (step 1) into D12.
     * (Optional) hide columns C and D (select columns > right-click > hide columns).
